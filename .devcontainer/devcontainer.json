@@ -1,0 +1,74 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/php
+{
+  "name": "File Storage Dev Container",
+  // // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  // "image": "",
+  // "mounts": [],
+  "dockerComposeFile": [
+    "compose.yaml",
+    "compose.override.yaml"
+  ],
+  "service": "front_end",
+  "workspaceFolder": "/workspace",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/r3dpoint/devcontainer-features/tailwindcss-standalone-cli:1": {}
+  },
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "codegyan.auto-closing-tags",
+        "LeonQin.auto-insert-comma",
+        "formulahendry.auto-rename-tag",
+        "aaron-bond.better-comments",
+        "alefragnani.Bookmarks",
+        "wesbos.theme-cobalt2",
+        "formulahendry.code-runner",
+        "Nuxt.mdc",
+        "Continue.continue",
+        "vscjava.vscode-java-debug",
+        "Fuzionix.devtool-plus",
+        "dracula-theme.theme-dracula",
+        "usernamehw.errorlens",
+        "dsznajder.es7-react-js-snippets",
+        "dbaeumer.vscode-eslint",
+        "tamasfe.even-better-toml",
+        "vscjava.vscode-java-pack",
+        "mhutchie.git-graph",
+        "github.vscode-github-actions",
+        "me-dutour-mathieu.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "vincaslt.highlight-matching-tag",
+        "ecmel.vscode-html-css",
+        "Oracle.oracle-java",
+        "xabikos.JavaScriptSnippets",
+        "ms-vscode.vscode-typescript-next",
+        "redhat.java",
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "vscjava.vscode-maven",
+        "esbenp.prettier-vscode",
+        "rvest.vs-code-prettier-eslint",
+        "vscjava.vscode-java-dependency",
+        "vscjava.vscode-spring-initializr",
+        "bradlc.vscode-tailwindcss",
+        "vscjava.vscode-java-test",
+        "vscode-icons-team.vscode-icons",
+        "DotJoshJohnson.xml",
+        "redhat.vscode-yaml",
+        "jock.svg"
+      ]
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "",
+  // // Use 'postStartCommand' to run commands after the container is started.
+  // "postStartCommand": "",
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "root"
+}

@@ -1,0 +1,44 @@
+services:
+  front_end:
+    build:
+      context: .
+      dockerfile: Dockerfile.front_end
+    container_name: front_end
+    ports:
+      - "3000:3000"
+    volumes:
+      - ..:/workspace:cached
+      - front_end_cache:/workspace/front_end/.next
+      - front_end_node_modules:/workspace/front_end/node_modules
+    environment:
+      - BUN_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+    working_dir: /workspace/front_end
+    command: /bin/sh -c "if [ ! -f /.package-installed ]; then bun install && touch /.package-installed; fi && sleep infinity"
+    networks:
+      - fs_network
+
+  back_end:
+    build:
+      context: .
+      dockerfile: Dockerfile.back_end
+    container_name: back_end
+    ports:
+      - "8000:8000"
+    volumes:
+      - ..:/workspace:cached
+      - spring_boot_maven_cache:/root/.m2
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    working_dir: /workspace/back_end
+    command: sleep infinity
+    networks:
+      - fs_network
+
+volumes:
+  front_end_cache:
+  front_end_node_modules:
+  spring_boot_maven_cache:
+
+networks:
+  fs_network:
